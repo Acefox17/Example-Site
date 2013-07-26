@@ -37,7 +37,7 @@ class CreateExampleMigration extends Migration {
 		    $table->date('example_date');
 		    $table->dateTime('example_date_time');
 		    $table->time('example_time');
-		    $table->timestamp('example_timestamp');
+		    $table->timestamp('example_timestamp');//format is 0000-00-0000:00:00
 
 			$table->timestamps();//adds created_at and updated_at timestamps, auto-updates
 			$table->softDeletes();//adds deleted_at timestamp, default null, auto-updates
