@@ -11,7 +11,7 @@ class UpdateExampleTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('example_table', function($table)
+		Schema::table('ex_objects', function($table)
 		{
 			$table->string('second_example_string')->unique();
 		});	
@@ -24,7 +24,7 @@ class UpdateExampleTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('example_table',function($table)
+		Schema::table('ex_objects',function($table)
 		{
 			$table->dropColumn('second_example_string');//can also be an array of column names
 		});

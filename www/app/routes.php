@@ -15,3 +15,12 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('/test', function()
+{
+	$an_object = new ExObject;
+	$an_object->example_string = 'testing, one two three';
+	$an_object->example_integer = 1;
+	$an_object->second_example_string = 'word';
+	$an_object->save();
+});

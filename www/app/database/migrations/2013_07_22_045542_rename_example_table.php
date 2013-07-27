@@ -11,7 +11,7 @@ class RenameExampleTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::rename('example_object','example_table');//first parameter is old name, second is new
+		Schema::rename('example_objects','ex_objects');//first parameter is old name, second is new
 	}
 
 	/**
@@ -21,7 +21,7 @@ class RenameExampleTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::rename('example_table','example_object');	
+		Schema::rename('ex_objects','example_objects');	
 	}
 
 }

@@ -11,7 +11,8 @@ class CreateExampleMigration extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('example_object', function($table)
+		//use snake-casing
+		Schema::create('example_objects', function($table)//name is plural of object we want to store
 		{
 			$table->increments('id');//10 bytes, use bigIncrements for larger possible integer values, 20 bytes, automatically primary key
 
@@ -73,7 +74,7 @@ class CreateExampleMigration extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('example_object');//also can use dropIfExists('example_object')
+		Schema::drop('example_objects');//also can use dropIfExists('example_object')
 		/*------Other drops------
 		Schema::table('example_object', function($table)
 		{
