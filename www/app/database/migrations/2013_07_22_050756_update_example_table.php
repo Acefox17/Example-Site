@@ -13,7 +13,7 @@ class UpdateExampleTable extends Migration {
 	{
 		Schema::table('ex_objects', function($table)
 		{
-			$table->string('second_example_string')->unique();
+			$table->integer('second_example_integer')->unsigned();
 		});	
 	}
 
@@ -26,7 +26,7 @@ class UpdateExampleTable extends Migration {
 	{
 		Schema::table('ex_objects',function($table)
 		{
-			$table->dropColumn('second_example_string');//can also be an array of column names
+			$table->dropColumn('second_example_integer');//parameter can also be an array of column names
 		});
 	}
 

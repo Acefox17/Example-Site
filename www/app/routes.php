@@ -16,11 +16,36 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('/test', function()
+Route::get('/redirect_home', function()
+{
+	return Redirect::to('/');
+});
+
+Route::get('/helloworld',function()
+{
+	return 'Hello World.';
+});
+
+Route::get('/parametertest/{parameter}',function($parameter)
+{
+	return "The parameter was {$parameter}.";//note the double quotes
+});
+
+Route::get('/make_object/{intval?}', function($intval = 0)
 {
 	$an_object = new ExObject;
-	$an_object->example_string = 'testing, one two three';
-	$an_object->example_integer = 1;
-	$an_object->second_example_string = 'word';
+	$an_object->example_string = 'testing';
+	$an_object->example_integer = $intval;
 	$an_object->save();
+});
+
+Route::get('/ex_view', function()
+{
+	return View::make('example_view');
+});
+
+Route::get('/ex_view_with_object/{objectid}', function($objectid)
+{
+	$data['object'] = ExObject::find($objectid);
+	return View::make('example_view_with_object', $data);
 });
